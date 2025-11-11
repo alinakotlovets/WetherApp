@@ -1,0 +1,17 @@
+ul{
+    list-style-type: none;
+}
+
+.active{
+    background-color: gray;
+}
+
+.content-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.weather-list{
+    display: flex;
+    gap: 20px;
+}
