@@ -28,6 +28,9 @@ export async function getApi(place, key) {
     day.temp = item.temp;
     day.feelslike = item.feelslike;
     day.humidity = item.humidity;
+    day.tempmax = item.tempmax;
+    day.tempmin = item.tempmin;
+    day.conditions = item.conditions;
     if (item.snow !== 0) {
       day.snow = item.snow;
     }
