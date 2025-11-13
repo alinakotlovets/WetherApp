@@ -13,11 +13,11 @@ export async function getApi(place, key) {
     `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${place}?unitGroup=metric&include=current&key=${key}`,
   );
   if (!response.ok) {
-    console.log(response.status);
+    throw new Error(response.status);
   }
   const data = await response.json();
   if (!data) {
-    console.log(`data not found it's` + data);
+    throw new Error("NotFound");
   }
   const address = { address: data.address };
   let weatherByDays = [];

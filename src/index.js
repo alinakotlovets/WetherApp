@@ -25,11 +25,13 @@ contentBox.prepend(searchBox);
 
 let weather = {};
 
+const notFound = document.createElement("h1");
+notFound.classList.add("not-found");
 const contentWeatherBox = document.querySelector(".content-weather-box");
 const loadingEl = document.createElement("img");
 loadingEl.classList.add("loading");
 loadingEl.src = loading;
-contentWeatherBox.appendChild(loadingEl);
+contentWeatherBox.append(loadingEl, notFound);
 
 async function getWeather(value) {
   loadingEl.style.display = "flex";
@@ -38,8 +40,17 @@ async function getWeather(value) {
     renderSelectWeather(weather, getCurrentDay(), getActiveUnit());
     renderWeather(weather);
   } catch (err) {
-    console.error(err);
-    loadingEl.innerText = "Something went wrong!";
+    if (
+      err.message === "400" ||
+      err.message === "NotFound" ||
+      err.message === "404"
+    ) {
+      notFound.innerText = `Not found ${value}`;
+      notFound.style.display = "flex";
+    } else {
+      notFound.innerText = "Something went wrong!";
+      notFound.style.display = "flex";
+    }
   } finally {
     loadingEl.style.display = "none";
   }
@@ -47,6 +58,11 @@ async function getWeather(value) {
 
 searchButton.addEventListener("click", (event) => {
   event.preventDefault();
+  notFound.innerText = "";
+  notFound.style.display = "none";
+  document.querySelector(".weather-list").innerHTML = "";
+  document.querySelector(".current-weather-left-box").innerHTML = "";
+  document.querySelector(".current-weather-right-box").innerHTML = "";
   getWeather(searchInput.value);
   searchInput.value = "";
 });
