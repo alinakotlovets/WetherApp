@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://your-username.github.io/your-repo-name/",
+  "homepage": "https://alinakotlovets.github.io/WetherApp/",
   "scripts": {
     "build": "webpack",
     "deploy": "npm run build && gh-pages -d dist",
@@ -13,7 +13,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "copy-webpack-plugin": "^13.0.1",
     "css-loader": "^7.1.2",
+    "gh-pages": "^6.3.0",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.4",
     "prettier": "^3.6.2",

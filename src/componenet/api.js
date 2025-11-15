@@ -1,5 +1,5 @@
 export async function getKey() {
-  const response = await fetch("/config.json");
+  const response = await fetch("/WetherApp/config.json");
   if (!response.ok) {
     console.log(response.status);
   }
