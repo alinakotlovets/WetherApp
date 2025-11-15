@@ -265,3 +265,116 @@ h1 {
     transform: translate(-50%, -50%);
 
 }
+
+
+@media screen and (max-width: 1199.9px) {
+
+    .search-input {
+        width: 80%;
+    }
+
+    .search-button {
+        width: 15%;
+    }
+
+    .weather-list {
+        display: grid;
+        grid-template-columns:  repeat(4, 1fr);
+    }
+
+
+}
+
+@media screen and (max-width: 767.9px) {
+    .search-box {
+        gap: var(--space-10px);
+        margin-top: var(--space-20px);
+        width: 90%;
+    }
+
+
+    .search-input {
+        width: 80%;
+    }
+
+    .search-button {
+        width: 20%;
+    }
+
+    .current-weather-box {
+        margin-top: var(--space-40px);
+        flex-direction: column-reverse;
+        height: 200px;
+        width: 100%;
+    }
+
+    .content-weather-box {
+        width: 100%;
+    }
+
+    .current-weather-icon {
+        width: var(--space-112px);
+        height: var(--space-112px);
+    }
+
+
+    .current-weather-left-box {
+        width: 80%;
+        gap: var(--space-16px);
+        justify-content: end;
+    }
+
+    .current-weather-right-box {
+        margin: 0;
+        width: 80%;
+        justify-content: start;
+    }
+
+    .weather-item {
+        width: 100px;
+        height: 120px;
+    }
+
+    .weather-item-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+
+    h1 {
+        font-size: var(--text-2xl);
+        line-height: var(--text-2xl--line-height);
+    }
+
+
+    h2 {
+        font-size: var(--text-lg);
+        line-height: var(--text-lg--line-height);
+    }
+
+    h3 {
+        font-size: var(--text-xs);
+        line-height: var(--text-xs--line-height);
+        color: var(--neutral-300);
+    }
+
+    h4 {
+        font-size: var(--text-xs);
+        line-height: var(--text-xs--line-height);
+    }
+
+    .weather-list {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+        justify-content: center;
+    }
+
+    .weather-box {
+        margin: var(--space-40px) auto;
+        text-align: center;
+        width: 90%;
+    }
+
+
+}
